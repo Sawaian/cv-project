@@ -6,7 +6,10 @@ const Overview = (props) => {
 
 return (
     <ul>
-        console.log(myInfo)
+        { Object.entries(myInfo).map(([key, value]) => {
+        return <li>{value}</li>
+        })}
+
     </ul>
     );
 }
