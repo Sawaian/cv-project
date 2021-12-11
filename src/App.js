@@ -13,6 +13,8 @@ class GeneralInfo extends Component {
         phone: '',
         id: uniqid(),
       },
+
+      applicantInfo: [],
     };
   }
 
@@ -51,13 +53,13 @@ class GeneralInfo extends Component {
               type="text" 
               id="nameInput"
               />
-          {/* <label htmlFor="emailInput"> Email</label>
+          <label htmlFor="emailInput"> Email</label>
           <input
           onChange={this.handleChange}
           value={personalInfo.email}
           type="text"
           id="emailInput" 
-          /> */}
+          />
           <button type="submit">Add info</button>
         </form>
         <Overview myInfo={personalInfo} />
