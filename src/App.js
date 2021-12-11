@@ -1,25 +1,66 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class GeneralInfo extends Component {
+  constructor(){
+    super();
+
+    this.state = {
+      personalInfo: {
+        name: '',
+        email: '',
+        phone: '',
+        id: uniqid(),
+      },
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      personalInfo: {
+        name: e.target.value,
+        email: e.target.value,
+      }
+    })
+  }
+
+  onSubmitInfo = (e) => {
+    e.preventDefault();
+    this.setState({
+  
+    })
+  }
+
+  render() {
+      const { personalInfo } = this.state;
+
+    return(
+      <div>
+        <form type="submit" onSubmit={this.onSubmitInfo}>
+          <label htmlFor="nameInput"> Name</label>
+          <input 
+              onChange={this.handleChange}
+              value={personalInfo.name}
+              type="text" 
+              id="nameInput"
+              />
+          <label htmlFor="emailInput"> Email</label>
+          <input
+          onChange={this.handleChange}
+          value={personalInfo.email}
+          type="text"
+          id="emailInput" 
+          />
+          <button type="submit">Add info</button>
+
+        </form>
+
+      </div>
+    )
+
+  }
+
 }
+
 
 export default App;
