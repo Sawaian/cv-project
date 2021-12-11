@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import './App.css';
+import Overview from "./Components/Overview";
+import uniqid from "uniqid";
 
 class GeneralInfo extends Component {
   constructor(){
@@ -27,6 +28,11 @@ class GeneralInfo extends Component {
   onSubmitInfo = (e) => {
     e.preventDefault();
     this.setState({
+      personalInfo: {
+        name: '',
+        email: '',
+        phone: '',
+      },
   
     })
   }
@@ -44,23 +50,22 @@ class GeneralInfo extends Component {
               type="text" 
               id="nameInput"
               />
-          <label htmlFor="emailInput"> Email</label>
+          {/* <label htmlFor="emailInput"> Email</label>
           <input
           onChange={this.handleChange}
           value={personalInfo.email}
           type="text"
           id="emailInput" 
-          />
+          /> */}
           <button type="submit">Add info</button>
-
         </form>
-
+        <Overview myInfo={personalInfo} />
       </div>
     )
 
-  }
+  };
 
-}
+};
 
 
-export default App;
+export default GeneralInfo;
