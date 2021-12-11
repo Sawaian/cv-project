@@ -6,9 +6,7 @@ const Overview = (props) => {
 
 return (
     <ul>
-        {myInfo.value((value) => {
-            return <li>{value.name }</li>
-        })}
+        console.log(myInfo)
     </ul>
     );
 }

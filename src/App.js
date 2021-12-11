@@ -23,6 +23,7 @@ class GeneralInfo extends Component {
         email: e.target.value,
       }
     })
+    console.log()
   }
 
   onSubmitInfo = (e) => {
@@ -43,7 +44,7 @@ class GeneralInfo extends Component {
     return(
       <div>
         <form type="submit" onSubmit={this.onSubmitInfo}>
-          <label htmlFor="nameInput"> Name</label>
+          <label htmlFor="nameInput"> Name </label>
           <input 
               onChange={this.handleChange}
               value={personalInfo.name}
