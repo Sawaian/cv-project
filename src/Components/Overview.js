@@ -6,12 +6,9 @@ const Overview = (props) => {
 
 return (
     <ul>
-        { Object.entries(myInfo).map(([key, value]) => {
-        return <li>{value}</li>
-        })}
-
-    </ul>
-    );
+        { myInfo.map((info =>{
+            return <li key={info}>{info.name}</li>
+            </ul>
 }
 
 export default Overview
