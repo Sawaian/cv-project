@@ -2,6 +2,7 @@ import React from "react";
 
 const Overview = (props) => {
     const { myInfo } = props;
+   
 
 
 return (

@@ -18,10 +18,12 @@ class GeneralInfo extends Component {
   handleChange = (e) => {
     this.setState({
       myInfo: {
-        [e.target.name]: e.target.value,
+        name: e.target.name.value,
+        email: e.target.email.value,
         id: this.state.myInfo.id,
       },
     })
+    console.log(this.state.myInfo)
  }
 
   onSubmitInfo = (e) => {
@@ -30,6 +32,7 @@ class GeneralInfo extends Component {
       applicantInfo: Object.values(this.state.myInfo),
       myInfo: {
         name: '',
+        email: '',
         id: uniqid(),
         }
       })
