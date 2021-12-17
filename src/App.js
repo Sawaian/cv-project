@@ -17,9 +17,9 @@ class GeneralInfo extends Component {
   }
   handleChange = (e) => {
     this.setState({
+
       myInfo: {
-        name: e.target.name.value,
-        email: e.target.email.value,
+        [e.target.name]: e.target.value,
         id: this.state.myInfo.id,
       },
     })
@@ -28,6 +28,7 @@ class GeneralInfo extends Component {
 
   onSubmitInfo = (e) => {
     e.preventDefault()
+    console.log(this.state.myInfo)
     this.setState({
       applicantInfo: Object.values(this.state.myInfo),
       myInfo: {
@@ -50,7 +51,6 @@ class GeneralInfo extends Component {
             onChange={this.handleChange}
             value={myInfo.name}
             type="text" 
-            id="nameInput"
             name="name"
           />
           <label htmlFor="emailInput"> Email</label>
@@ -58,7 +58,6 @@ class GeneralInfo extends Component {
             onChange={this.handleChange}
             value={myInfo.email}
             type="text"
-            id="emailInput"
             name="email" 
           />
           <button type="submit">Add info</button>
