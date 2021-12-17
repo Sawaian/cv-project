@@ -20,7 +20,7 @@ class GeneralInfo extends Component {
     const value = e.target.value;
 
     this.setState({
-      [name]: value,
+      myInfo:{...[name]: [value] }
     })
     console.log(this.state.myInfo)
  }
