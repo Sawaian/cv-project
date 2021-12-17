@@ -16,12 +16,11 @@ class GeneralInfo extends Component {
     }
   }
   handleChange = (e) => {
-    this.setState({
+    const name = e.target.name;
+    const value = e.target.value;
 
-      myInfo: {
-        [e.target.name]: e.target.value,
-        id: this.state.myInfo.id,
-      },
+    this.setState({
+      [name]: value,
     })
     console.log(this.state.myInfo)
  }
@@ -47,10 +46,10 @@ class GeneralInfo extends Component {
       <div>
         <form type="submit" onSubmit={this.onSubmitInfo}>
           <label htmlFor="nameInput"> Name </label>
-          <input 
+          <input
             onChange={this.handleChange}
             value={myInfo.name}
-            type="text" 
+            type="text"
             name="name"
           />
           <label htmlFor="emailInput"> Email </label>
@@ -58,7 +57,7 @@ class GeneralInfo extends Component {
             onChange={this.handleChange}
             value={myInfo.email}
             type="text"
-            name="email" 
+            name="email"
           />
           <button type="submit">Add info</button>
         </form>
