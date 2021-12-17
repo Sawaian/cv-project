@@ -53,7 +53,7 @@ class GeneralInfo extends Component {
             type="text" 
             name="name"
           />
-          <label htmlFor="emailInput"> Email</label>
+          <label htmlFor="emailInput"> Email </label>
           <input
             onChange={this.handleChange}
             value={myInfo.email}
