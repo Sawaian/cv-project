@@ -15,12 +15,19 @@ class GeneralInfo extends Component {
       applicantInfo: [],
     }
   }
-  handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+ 
+  addName = (e) => {
+    this.setState({
+      myInfo:{
+        ...this.state.name,
+        name: e.target.value,
+      }
+    })
+  }
+  addEmail = (e) => {
 
     this.setState({
-      myInfo:{...[name]: [value] }
+      myInfo:{...this.state.email, email: e.target.value }
     })
     console.log(this.state.myInfo)
  }
@@ -47,14 +54,14 @@ class GeneralInfo extends Component {
         <form type="submit" onSubmit={this.onSubmitInfo}>
           <label htmlFor="nameInput"> Name </label>
           <input
-            onChange={this.handleChange}
+            onChange={this.addName}
             value={myInfo.name}
             type="text"
             name="name"
           />
           <label htmlFor="emailInput"> Email </label>
           <input
-            onChange={this.handleChange}
+            onChange={this.addEmail}
             value={myInfo.email}
             type="text"
             name="email"
