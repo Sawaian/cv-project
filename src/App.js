@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Overview from "./Components/Overview";
-import uniqid from "uniqid";
 
 class GeneralInfo extends Component {
   constructor(){
@@ -10,27 +9,21 @@ class GeneralInfo extends Component {
       myInfo: {
         name: '',
         email: '',
-        id: uniqid(),
+        phone: '',
       },
       applicantInfo: [],
     }
   }
  
-  addName = (e) => {
+  handleChange = (e) => {
     this.setState({
       myInfo:{
         ...this.state.myInfo,
-        name: e.target.value,
+        [e.target.name]: e.target.value,
       }
     })
   }
-  addEmail = (e) => {
 
-    this.setState({
-      myInfo:{...this.state.myInfo, email: e.target.value }
-    })
-    console.log(this.state.myInfo)
- }
 
   onSubmitInfo = (e) => {
     e.preventDefault()
@@ -40,7 +33,7 @@ class GeneralInfo extends Component {
       myInfo: {
         name: '',
         email: '',
-        id: uniqid(),
+        phone: '',
         }
       })
     }
@@ -54,17 +47,25 @@ class GeneralInfo extends Component {
         <form type="submit" onSubmit={this.onSubmitInfo}>
           <label htmlFor="nameInput"> Name </label>
           <input
-            onChange={this.addName}
+            onChange={this.handleChange}
             value={myInfo.name}
             type="text"
             name="name"
           />
           <label htmlFor="emailInput"> Email </label>
           <input
-            onChange={this.addEmail}
+            onChange={this.handleChange}
             value={myInfo.email}
             type="text"
             name="email"
+          />
+          <button type="submit">Add info</button>
+          <label htmlFor="phoneInput"> Phone </label>
+          <input
+            onChange={this.handleChange}
+            value={myInfo.phone}
+            type="number"
+            name="phone"
           />
           <button type="submit">Add info</button>
         </form>
