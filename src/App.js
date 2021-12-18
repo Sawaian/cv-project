@@ -19,7 +19,7 @@ class GeneralInfo extends Component {
   addName = (e) => {
     this.setState({
       myInfo:{
-        ...this.state.name,
+        ...this.state.myInfo,
         name: e.target.value,
       }
     })
@@ -27,7 +27,7 @@ class GeneralInfo extends Component {
   addEmail = (e) => {
 
     this.setState({
-      myInfo:{...this.state.email, email: e.target.value }
+      myInfo:{...this.state.myInfo, email: e.target.value }
     })
     console.log(this.state.myInfo)
  }
