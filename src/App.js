@@ -22,6 +22,7 @@ class GeneralInfo extends Component {
         [e.target.name]: e.target.value,
       }
     })
+    return this.state.myInfo;
   }
 
 
