@@ -7,17 +7,22 @@ class Experience extends Component {
   
       this.state = {
         education: {
-          schoolName: '',
-          major: '',
+          schoolName: 'University.',
+          major: 'film',
           years: '',
         },
         applicantInfo: [],
       }
     }
+
+    render(){
+      return(  <div>
+        <h1>{this.props.major}</h1>
+        <button onClick={this.props.schoolName}>Click Me!</button>
+      </div>)
+    }
+    
 }
 
-render({
-
-})
 
 export default Experience;
