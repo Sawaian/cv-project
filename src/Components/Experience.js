@@ -17,7 +17,7 @@ class Experience extends Component {
     render(){
       return(  <div>
         <h1>{this.props.major}</h1>
-        <button onClick={console.log(this.state.schoolName)}>Click Me!</button>
+        <button onClick={console.log("grateful")}>Click Me!</button>
       </div>)
     }
     
