@@ -1,4 +1,3 @@
-import render from "dom-serializer";
 import React, { Component } from "react";
 
 class Experience extends Component {
@@ -18,7 +17,7 @@ class Experience extends Component {
     render(){
       return(  <div>
         <h1>{this.props.major}</h1>
-        <button onClick={this.props.schoolName}>Click Me!</button>
+        <button onClick={console.log(this.state.schoolName)}>Click Me!</button>
       </div>)
     }
     
