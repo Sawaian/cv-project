@@ -25,6 +25,7 @@ class GeneralInfo extends Component {
     return this.state.myInfo;
   }
 
+ 
 
   onSubmitInfo = (e) => {
     e.preventDefault()
@@ -37,6 +38,10 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
+
+      function hideInputs(){
+        
+      }
     }
 
 
