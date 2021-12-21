@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Overview from "./Overview";
-import styles from "./styles/styles";
+import Overview from "../Overview";
+import "./GeneralInfo.css";
 
 class GeneralInfo extends Component {
   constructor(){
