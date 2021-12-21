@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Overview from "./Overview";
+import styles from "./styles/styles";
 
 class GeneralInfo extends Component {
   constructor(){
@@ -39,9 +40,6 @@ class GeneralInfo extends Component {
         }
       })
 
-      function hideInputs(){
-        
-      }
     }
 
 
@@ -50,7 +48,7 @@ class GeneralInfo extends Component {
 
     return(
       <div>
-        <form type="submit" onSubmit={this.onSubmitInfo}>
+        <form type="submit" className="form-active" id="blue" onSubmit={this.onSubmitInfo}>
           <label htmlFor="nameInput"> Name </label>
           <input
             onChange={this.handleChange}
