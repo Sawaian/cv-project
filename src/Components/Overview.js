@@ -9,7 +9,7 @@ return (
         { myInfo.map((myInfo) =>{
             return <li>{myInfo}</li>;
         })}
-        <li>item 3</li>
+        <li></li>
             </ul>
             );
         };
