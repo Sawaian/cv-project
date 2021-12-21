@@ -1,6 +1,6 @@
 
 import React from "react";
-import GeneralInfo from "./Components/GeneralInfo";
+import GeneralInfo from "./Components/GeneralInfo/";
 import Experience from "./Components/Experience";
 import Education from "./Components/Education";
 
