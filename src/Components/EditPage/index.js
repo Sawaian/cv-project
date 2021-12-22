@@ -1,34 +1,34 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
-class EditText extends Component{
-    constructor(){
-        super();
-        this.state = {
-            pageLoad: true,
-        }
-    }
+// class EditText extends Component{
+//     constructor(){
+//         super();
+//         this.state = {
+//             pageLoad: true,
+//         }
+//     }
 
-    finishEdit = (e) => {
-        document.querySelector(".edit-Btn").style.display = "none";
-    }
-        render(){
+//     finishEdit = (e) => {
+//         document.querySelector(".edit-Btn").style.display = "none";
+//     }
+//         render(){
 
-            // create a conditional render here to hide the edit page.
+//             // create a conditional render here to hide the edit page.
 
-            const { pageLoad } = this.state
+//             const { pageLoad } = this.state
 
-            if(pageLoad === true){
-                this.finishEdit()
-            }
+//             if(pageLoad === true){
+//                 this.finishEdit()
+//             }
 
-            return ( 
-                <div>
-                    <button className="edit-Btn" display="none" onClick={this.finishEdit} > Edit </button>
-                </div>
-            )
+//             return ( 
+//                 <div>
+//                     <button className="edit-Btn" display="none" onClick={this.finishEdit} > Edit </button>
+//                 </div>
+//             )
 
         
-    }
-}
+//     }
+// }
 
-export default EditText;
+// export default EditText;

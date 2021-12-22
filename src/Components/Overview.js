@@ -1,9 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Overview = (props) => {
-    const { myInfo } = props;
+// const Overview = (props) => {
+//     const { myInfo } = props;
 
+class Overview extends Component {
+    constructor(props){
+        super(props);
+    }
 
+render(){
+    const {myInfo} = this.props;
 return (
     <ul>
         { myInfo.map((myInfo) =>{
@@ -13,7 +19,7 @@ return (
             </ul>
             );
         };
+}
 
 
-
-export default Overview
+export default Overview;

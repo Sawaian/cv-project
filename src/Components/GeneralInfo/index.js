@@ -46,7 +46,7 @@ class GeneralInfo extends Component {
     removeDisplay = () =>{
       document.querySelector(".form-active").style.display = "none";
       console.log("this")
-      this.createEditButton();
+      // this.createEditButton();
     }
 
     createEditButton = () =>{
