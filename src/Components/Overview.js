@@ -11,12 +11,12 @@ class Overview extends Component {
 render(){
     const {myInfo} = this.props;
 return (
-    <ul>
+    <div>
         { myInfo.map((myInfo) =>{
-            return <li>{myInfo}</li>;
+            return <div className={myInfo}>{myInfo}</div>
         })}
-        <li></li>
-            </ul>
+  
+            </div>
             );
         };
 }
