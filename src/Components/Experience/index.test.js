@@ -2,5 +2,5 @@
 const experience = require ('./index');
 
 test('"editField"', () => {
-    expect(experience.changeInfo('red')).toBe('red');
+    expect(experience.test('red')).toBe('red');
 });

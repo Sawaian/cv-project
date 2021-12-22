@@ -18,9 +18,8 @@ class Experience extends Component {
     }
 
     changeInfo = (e) =>{
-      document.querySelector("form-active").style.color = "red";
-
-      console.log("red")
+      document.querySelector(".form-active").style.display = "none";
+      console.log("this")
  
     }
 
@@ -28,7 +27,7 @@ class Experience extends Component {
 
       const { education, userInfo } = this.state;
       return(  <div>
-        <button onClick={console.log(education.companyName)}>School Me!</button>
+        <button onClick={this.changeInfo}>School Me!</button>
       </div>)
     }
     
