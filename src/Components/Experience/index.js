@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 /* 
 A section to add practical experience (company name, position title, main tasks of your jobs, date from and until when you worked for that company) */
 class Experience extends Component {
@@ -16,12 +17,18 @@ class Experience extends Component {
       }
     }
 
+    changeInfo = (e) =>{
+      document.querySelector("form-active").style.color = "red";
+
+      console.log("red")
+ 
+    }
+
     render(){
 
       const { education, userInfo } = this.state;
       return(  <div>
-        <h1>{education.companyName}</h1>
-        <button onClick={console.log("grateful")}>Click Me!</button>
+        <button onClick={console.log(education.companyName)}>School Me!</button>
       </div>)
     }
     
