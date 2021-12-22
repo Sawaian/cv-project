@@ -39,7 +39,18 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
+      this.removeDisplay()
+    }
 
+
+    removeDisplay = () =>{
+      document.querySelector(".form-active").style.display = "none";
+      console.log("this")
+      this.createEditButton();
+    }
+
+    createEditButton = () =>{
+      document.querySelector(".edit-Btn").style.display = "block"
     }
 
 

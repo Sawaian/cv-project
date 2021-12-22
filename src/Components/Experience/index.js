@@ -17,12 +17,7 @@ class Experience extends Component {
       }
     }
 
-    changeInfo = (e) =>{
-      document.querySelector(".form-active").style.display = "none";
-      console.log("this")
- 
-    }
-
+   
     render(){
 
       const { education, userInfo } = this.state;
