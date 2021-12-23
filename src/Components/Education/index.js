@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import Overview from "../Overview";
+import "./education.css";
 
 /* 
 A section to add practical experience (company name, position title, main tasks of your jobs, date from and until when you worked for that company) */
@@ -70,7 +71,7 @@ class Education extends Component {
               type="text"
               name="major"
             />
-            <label htmlFor="years"> yeaers </label>
+            <label htmlFor="years"> years </label>
             <input
               onChange={this.handleChange}
               value={education.years}

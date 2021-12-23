@@ -7,11 +7,13 @@ import Education from "./Components/Education";
 const App = () => {
   return (
     <>
-      <GeneralInfo />
-      <Experience />
-      <Education />
+       <GeneralInfo />
+       <Experience /> 
+       <Education /> 
     </>
   );
 };
+
+//when you click the edit button, it will unhide the forms and put the value of the forms input as a placeholder in the forms. 
 
 export default App; 
