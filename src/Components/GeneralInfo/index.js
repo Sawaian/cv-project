@@ -15,6 +15,7 @@ class GeneralInfo extends Component {
       applicantInfo: [],
     }
   }
+
  
   handleChange = (e) => {
     this.setState({
@@ -46,11 +47,11 @@ class GeneralInfo extends Component {
     removeDisplay = () =>{
       document.querySelector(".form-active").style.display = "none";
       console.log("this")
-      // this.createEditButton();
+      this.createEditButton();
     }
 
     createEditButton = () =>{
-      document.querySelector(".edit-Btn").style.display = "block"
+      document.querySelector(".edit-Btn").style.display = "flex";
     }
 
 
@@ -85,7 +86,11 @@ class GeneralInfo extends Component {
           <button type="submit">Add info</button>
         </form>
         <Overview myInfo={applicantInfo} />
+        <div>
+                    <button className="edit-Btn" display="none" onClick={this.finishEdit} > Edit </button>
+                </div>
       </div>
+      
     )
   };
 };
