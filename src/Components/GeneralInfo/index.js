@@ -47,12 +47,20 @@ class GeneralInfo extends Component {
     removeDisplay = () =>{
       document.querySelector(".form-active").style.display = "none";
       console.log("this")
-      this.createEditButton();
+      this.displayEditButton();
     }
 
-    createEditButton = () =>{
+    displayEditButton = () =>{
       document.querySelector(".edit-Btn").style.display = "flex";
     }
+
+    displayForms(){
+      document.querySelector(".form-active").style.display = "flex";
+      document.querySelector(".edit-Btn").style.display = "none"
+      console.log("Forms displayed.")
+  }
+
+
 
 
   render() {
@@ -87,7 +95,7 @@ class GeneralInfo extends Component {
         </form>
         <Overview myInfo={applicantInfo} />
         <div>
-                    <button className="edit-Btn" display="none" onClick={this.finishEdit} > Edit </button>
+                    <button className="edit-Btn" display="none" onClick={this.displayForms} > Edit </button>
                 </div>
       </div>
       
