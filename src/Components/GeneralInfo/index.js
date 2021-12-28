@@ -57,9 +57,7 @@ class GeneralInfo extends Component {
     displayForms(){
       document.querySelector(".form-active").style.display = "flex";
       document.querySelector(".edit-Btn").style.display = "none"
-      console.log("Forms displayed.")
   }
-
 
 
 
@@ -69,8 +67,9 @@ class GeneralInfo extends Component {
     return(
       <div>
         <form type="submit" className="form-active" id="blue" onSubmit={this.onSubmitInfo}>
-          <label htmlFor="nameInput"> Name </label>
+          <label htmlFor="nameInput" > Name </label>
           <input
+            className ="inputField"
             onChange={this.handleChange}
             value={myInfo.name}
             type="text"
@@ -78,14 +77,15 @@ class GeneralInfo extends Component {
           />
           <label htmlFor="emailInput"> Email </label>
           <input
+            className ="inputField"
             onChange={this.handleChange}
             value={myInfo.email}
             type="text"
             name="email"
           />
-          <button type="submit">Add info</button>
           <label htmlFor="phoneInput"> Phone </label>
           <input
+            className ="inputField"
             onChange={this.handleChange}
             value={myInfo.phone}
             type="number"
