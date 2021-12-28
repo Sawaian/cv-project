@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GeneralInfo from "./GeneralInfo";
 
 // const Overview = (props) => {
 //     const { myInfo } = props;
@@ -13,7 +14,7 @@ render(){
 return (
     <div>
         { myInfo.map((myInfo) =>{
-            return <div className={myInfo}>{myInfo}</div>
+            return <div className={"GeneralInfo"}>{myInfo}</div>
         })}
   
             </div>

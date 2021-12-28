@@ -43,11 +43,9 @@ class GeneralInfo extends Component {
       this.removeDisplay()
     }
 
+    handleRemoveMyInfo = () =>{
+      
 
-    removeDisplay = () =>{
-      document.querySelector(".form-active").style.display = "none";
-      console.log("this")
-      this.displayEditButton();
     }
 
     displayEditButton = () =>{
@@ -56,7 +54,7 @@ class GeneralInfo extends Component {
 
     displayForms(){
       document.querySelector(".form-active").style.display = "flex";
-      document.querySelector(".edit-Btn").style.display = "none"
+      document.querySelector(".edit-Btn").style.display = "none";
   }
 
 
@@ -66,10 +64,11 @@ class GeneralInfo extends Component {
 
     return(
       <div>
-        <form type="submit" className="form-active" id="blue" onSubmit={this.onSubmitInfo}>
+        <form type="submit" className="form-active" onSubmit={this.onSubmitInfo}>
           <label htmlFor="nameInput" > Name </label>
           <input
             className ="inputField"
+            placeholder ="Name"
             onChange={this.handleChange}
             value={myInfo.name}
             type="text"
