@@ -40,23 +40,7 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
-      this.removeDisplay()
     }
-
-    handleRemoveMyInfo = () =>{
-      
-
-    }
-
-    displayEditButton = () =>{
-      document.querySelector(".edit-Btn").style.display = "flex";
-    }
-
-    displayForms(){
-      document.querySelector(".form-active").style.display = "flex";
-      document.querySelector(".edit-Btn").style.display = "none";
-  }
-
 
 
   render() {
