@@ -16,6 +16,7 @@ class Education extends Component {
           years: '',
         },
         educationHistory: [],
+        edit: false,
       }
     }
 
@@ -39,7 +40,8 @@ class Education extends Component {
           years: '',
           }
         })
-        this.removeDisplay()
+        this.handleEdit();
+        console.log(this.state.edit)
       }
 
 
@@ -48,11 +50,21 @@ class Education extends Component {
       // this.createEditButton();
     }
 
+    handleEdit = () => {
+      this.setState({
+        edit: true,
+      })
+    }
+
    
     render(){
 
-      const { education, educationHistory } = this.state;
-  
+      const { education, educationHistory, edit } = this.state;
+      
+      if(edit){
+       return  <Overview myInfo={educationHistory} />
+      }
+      else if (!edit){
       return(
         <div>
           <form type="submit" className="education-form" id="education" onSubmit={this.onSubmitInfo}>
@@ -82,7 +94,7 @@ class Education extends Component {
           <Overview myInfo={educationHistory} />
         </div>
       )
-    };
+    };}
     }
     
 

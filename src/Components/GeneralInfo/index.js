@@ -44,19 +44,7 @@ class GeneralInfo extends Component {
     }
 
     editTask = (e) =>  {
-      e.preventDefault()
-      this.toggleDisplay()
-    //  let list = document.querySelectorAll(".inputField")
-    //  for(let i = 0; i < list.length; i++){
-    //    if(e[i] === list[i]){
-    //      console.log(list[i])
-    //    }
-    //    else { console.log("edit")};
-
-    //  }
-    //  list.setAttribute("placeholder", e);
-    //  this.removeDisplay();
-     
+      this.toggleDisplay();
     }
 
     addEditButton() {
@@ -105,10 +93,9 @@ class GeneralInfo extends Component {
           />
           <button type="submit">Add info</button>
         </form>
+        <button className="editButton" display="none" onSubmit={this.editTask} > Edit </button>
         <Overview myInfo={applicantInfo} />
-        <div>
-                    <button className="editButton" display="none" onSubmit={this.editTask(applicantInfo)} > Edit </button>
-                </div>
+    
       </div>
       
     )
