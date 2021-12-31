@@ -39,21 +39,36 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
-      this.removeDisplay();
+      this.toggleDisplay("none");
       this.addEditButton();
     }
 
     editTask = (e) =>  {
+      e.preventDefault()
+      this.toggleDisplay()
+    //  let list = document.querySelectorAll(".inputField")
+    //  for(let i = 0; i < list.length; i++){
+    //    if(e[i] === list[i]){
+    //      console.log(list[i])
+    //    }
+    //    else { console.log("edit")};
 
+    //  }
+    //  list.setAttribute("placeholder", e);
+    //  this.removeDisplay();
      
     }
 
-    addEditButton(){
+    addEditButton() {
       document.querySelector(".editButton").style.display = "flex";
     }
 
-    removeDisplay(){
+    toggleDisplay(e){
+      if("none"){
       document.querySelector(".form-active").style.display = "none";
+    }  else {
+         document.querySelector(".form-active").style.display = "flex";
+     }
     }
 
 
@@ -92,7 +107,7 @@ class GeneralInfo extends Component {
         </form>
         <Overview myInfo={applicantInfo} />
         <div>
-                    <button className="editButton" display="none" onClick={this.addEditButton} > Edit </button>
+                    <button className="editButton" display="none" onSubmit={this.editTask(applicantInfo)} > Edit </button>
                 </div>
       </div>
       
