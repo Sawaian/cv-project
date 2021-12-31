@@ -45,7 +45,6 @@ class Education extends Component {
 
     removeDisplay = () =>{
       document.querySelector(".education-form").style.display = "none";
-      console.log("this")
       // this.createEditButton();
     }
 

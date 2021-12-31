@@ -31,7 +31,6 @@ class GeneralInfo extends Component {
 
   onSubmitInfo = (e) => {
     e.preventDefault()
-    console.log(this.state.myInfo)
     this.setState({
       applicantInfo: Object.values(this.state.myInfo),
       myInfo: {
@@ -40,6 +39,21 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
+      this.removeDisplay();
+      this.addEditButton();
+    }
+
+    editTask = (e) =>  {
+
+     
+    }
+
+    addEditButton(){
+      document.querySelector(".editButton").style.display = "flex";
+    }
+
+    removeDisplay(){
+      document.querySelector(".form-active").style.display = "none";
     }
 
 
@@ -78,7 +92,7 @@ class GeneralInfo extends Component {
         </form>
         <Overview myInfo={applicantInfo} />
         <div>
-                    <button className="edit-Btn" display="none" onClick={this.displayForms} > Edit </button>
+                    <button className="editButton" display="none" onClick={this.addEditButton} > Edit </button>
                 </div>
       </div>
       

@@ -45,7 +45,6 @@ class Experience extends Component {
 
     removeDisplay = () =>{
       document.querySelector(".experience-form").style.display = "none";
-      console.log("this")
       // this.createEditButton();
     }
 
