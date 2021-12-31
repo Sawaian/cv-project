@@ -44,16 +44,18 @@ class Education extends Component {
         console.log(this.state.edit)
       }
 
-
-    removeDisplay = () =>{
-      document.querySelector(".education-form").style.display = "none";
-      // this.createEditButton();
-    }
-
     handleEdit = () => {
       this.setState({
         edit: true,
       })
+      console.log("edit")
+    }
+
+    handleDisplay = () => {
+      this.setState({
+        edit: false,
+      })
+      console.log("Display")
     }
 
    
@@ -62,9 +64,12 @@ class Education extends Component {
       const { education, educationHistory, edit } = this.state;
       
       if(edit){
-       return  <Overview myInfo={educationHistory} />
+       return  <div> <button className="editButton" onSubmit={this.handleDisplay}> Edit </button>
+                      <Overview myInfo={educationHistory} />
+       
+               </div>
       }
-      else if (!edit){
+      else {
       return(
         <div>
           <form type="submit" className="education-form" id="education" onSubmit={this.onSubmitInfo}>
