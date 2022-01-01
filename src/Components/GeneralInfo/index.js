@@ -12,7 +12,7 @@ class GeneralInfo extends Component {
         email: '',
         phone: '',
       },
-      applicantInfo: [],
+      infoArray: [],
     }
   }
 
@@ -32,7 +32,7 @@ class GeneralInfo extends Component {
   onSubmitInfo = (e) => {
     e.preventDefault()
     this.setState({
-      applicantInfo: Object.values(this.state.myInfo),
+      infoArray: Object.values(this.state.myInfo),
       myInfo: {
         name: '',
         email: '',
@@ -61,7 +61,7 @@ class GeneralInfo extends Component {
 
 
   render() {
-      const { myInfo, applicantInfo } = this.state;
+      const { myInfo, infoArray } = this.state;
 
     return(
       <div>
@@ -94,7 +94,7 @@ class GeneralInfo extends Component {
           <button type="submit">Add info</button>
         </form>
         <button className="editButton" display="none" onSubmit={this.editTask} > Edit </button>
-        <Overview myInfo={applicantInfo} />
+        <Overview myInfo={infoArray} />
     
       </div>
       

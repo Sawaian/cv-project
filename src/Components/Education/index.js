@@ -15,7 +15,7 @@ class Education extends Component {
           major: '',
           years: '',
         },
-        educationHistory: [],
+        infoArray: [],
         edit: false,
       }
     }
@@ -33,7 +33,7 @@ class Education extends Component {
       e.preventDefault()
       console.log(this.state.education)
       this.setState({
-        educationHistory: Object.values(this.state.education),
+        infoArray: Object.values(this.state.education),
         education: {
           schoolName: '',
           major: '',
@@ -65,11 +65,11 @@ class Education extends Component {
    
     render(){
 
-      const { education, educationHistory, edit } = this.state;
+      const { education, infoArray, edit } = this.state;
       
       if(edit){
        return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
-                      <Overview myInfo={educationHistory} />
+                      <Overview myInfo={infoArray} />
        
                </div>
       }
