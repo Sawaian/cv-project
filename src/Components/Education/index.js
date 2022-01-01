@@ -51,7 +51,11 @@ class Education extends Component {
       console.log("edit")
     }
 
-    handleDisplay = () => {
+    go(){
+      console.log("Brent sneakers")
+    }
+
+    handleDisplay = () =>{
       this.setState({
         edit: false,
       })
@@ -64,7 +68,7 @@ class Education extends Component {
       const { education, educationHistory, edit } = this.state;
       
       if(edit){
-       return  <div> <button className="editButton" onSubmit={this.handleDisplay}> Edit </button>
+       return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
                       <Overview myInfo={educationHistory} />
        
                </div>
@@ -96,7 +100,6 @@ class Education extends Component {
             />
             <button type="submit">Add info</button>
           </form>
-          <Overview myInfo={educationHistory} />
         </div>
       )
     };}

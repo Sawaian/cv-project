@@ -7,6 +7,7 @@ import GeneralInfo from "./GeneralInfo";
 class Overview extends Component {
     constructor(props){
         super(props);
+        
     }
 
 render(){
