@@ -13,6 +13,7 @@ class GeneralInfo extends Component {
         phone: '',
       },
       infoArray: [],
+      edit: false,
     }
   }
 
@@ -39,29 +40,34 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
-      this.toggleDisplay("none");
-      this.addEditButton();
     }
 
-    editTask = (e) =>  {
-      this.toggleDisplay();
+
+    handleEdit = () => {
+      this.setState({
+        edit: true,
+      })
+      console.log("edit")
     }
 
-    addEditButton() {
-      document.querySelector(".editButton").style.display = "flex";
-    }
-
-    toggleDisplay(e){
-      if("none"){
-      document.querySelector(".form-active").style.display = "none";
-    }  else {
-         document.querySelector(".form-active").style.display = "flex";
-     }
+    handleDisplay = () =>{
+      this.setState({
+        edit: false,
+      })
+      console.log("Display")
     }
 
 
   render() {
-      const { myInfo, infoArray } = this.state;
+      const { myInfo, infoArray, edit } = this.state;
+
+      if(edit){
+        return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
+                      <Overview myInfo={infoArray} />
+       
+               </div>
+      }
+      else{
 
     return(
       <div>
@@ -93,13 +99,13 @@ class GeneralInfo extends Component {
           />
           <button type="submit">Add info</button>
         </form>
-        <button className="editButton" display="none" onSubmit={this.editTask} > Edit </button>
+        <button className="editButton" display="none" onSubmit={this.edit} > Edit </button>
         <Overview myInfo={infoArray} />
     
       </div>
       
     )
-  };
+  };}
 };
 
 

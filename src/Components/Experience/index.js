@@ -15,7 +15,7 @@ class Experience extends Component {
           duties: '',
           employedFrom: '',
         },
-        jobHistory: [],
+        infoArray: [],
       }
     }
 
@@ -32,7 +32,7 @@ class Experience extends Component {
       e.preventDefault()
       console.log(this.state.jobs)
       this.setState({
-        jobHistory: Object.values(this.state.jobs),
+        infoArray: Object.values(this.state.jobs),
         jobs: {
           companyName: '',
           position: '',
@@ -51,7 +51,7 @@ class Experience extends Component {
    
     render(){
 
-      const { jobs, jobHistory } = this.state;
+      const { jobs, infoArray } = this.state;
   
       return(
         <div>
@@ -60,7 +60,7 @@ class Experience extends Component {
             <input
               className ="inputField"
               onChange={this.handleChange}
-              value={jobs.name}
+              value={jobs.companyName}
               type="text"
               name="companyName"
             />
@@ -68,7 +68,7 @@ class Experience extends Component {
             <input
               className ="inputField"
               onChange={this.handleChange}
-              value={jobs.email}
+              value={jobs.position}
               type="text"
               name="position"
             />
@@ -76,13 +76,13 @@ class Experience extends Component {
             <input
               className ="inputField"
               onChange={this.handleChange}
-              value={jobs.phone}
+              value={jobs.duties}
               type="text"
               name="duties"
             />
             <button type="submit">Add info</button>
           </form>
-          <Overview myInfo={jobHistory} />
+          <Overview myInfo={infoArray} />
         </div>
       )
     };

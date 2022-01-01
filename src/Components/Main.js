@@ -8,26 +8,17 @@ import Education from "./Education";
 class Main extends Component {
   constructor(){
     super();
-    this.state = {GeneralInfo: false, Experience: true, Education: false}
   }
    render(){
 
-    const main = this.state
-
-    if(main.GeneralInfo){
-      return <Experience />
-    }
-    if(main.Experience){
-      return <Education />
-    }
-  return ( <GeneralInfo />
-    // <>
-    //    <GeneralInfo />
-    //    <Experience /> 
-    //    <Education /> 
-    // </>
+  return (
+    <>
+       <GeneralInfo />
+       <Experience /> 
+       <Education /> 
+    </>
     
-    );
+    )
   }
 };
 
