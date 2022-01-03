@@ -52,6 +52,7 @@ class Education extends Component {
         edit: true,
       })
       console.log("edit")
+      console.log(this.schoolName)
     }
 
     handleDisplay = () =>{
@@ -64,12 +65,15 @@ class Education extends Component {
    
     render(){
 
-      const { education, infoArray, edit } = this.state;
+      const { schoolName, education, infoArray, edit } = this.state;
       
       if(edit){
        return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
-                      <Overview myInfo={infoArray} />
-                      <Display props={infoArray} />
+                      {/* <Overview myInfo={infoArray} /> */}
+                      <label htmlFor="schoolName"> School Attended </label>
+                      <p>{this.state.schoolName}</p>
+                      
+               
        
                </div>
       }
