@@ -40,6 +40,7 @@ class GeneralInfo extends Component {
         phone: '',
         }
       })
+      this.handleEdit()
     }
 
 
@@ -99,8 +100,6 @@ class GeneralInfo extends Component {
           />
           <button type="submit">Add info</button>
         </form>
-        <Overview myInfo={infoArray} />
-    
       </div>
       
     )

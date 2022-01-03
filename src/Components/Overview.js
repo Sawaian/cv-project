@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import GeneralInfo from "./GeneralInfo";
 
 // const Overview = (props) => {
 //     const { myInfo } = props;
