@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Overview from "../Overview";
 import "./EXP.css";
+import uniqid from "uniqid"
 
 /* 
 A section to add practical experience (company name, position title, main tasks of your jobs, date from and until when you worked for that company) */
@@ -14,6 +15,8 @@ class Experience extends Component {
           position: 'film',
           duties: '',
           employedFrom: '',
+          id: uniqid()
+          
         },
         infoArray: [],
         edit: false,

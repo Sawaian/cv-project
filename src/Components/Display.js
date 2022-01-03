@@ -6,10 +6,11 @@ class Display extends Component {
         super(props);
         
     }
-redner(){
+render(){
 
     const {props} = this.props;
     for(let i = 0; i < props.length; i++){
+        console.log(i)
         return (<div className={props[i]}>
             <label htmlFor={props[i] + "Input"}> {props[i]} </label>
             </div>
@@ -17,3 +18,4 @@ redner(){
     }
 }
 }
+export default Display;

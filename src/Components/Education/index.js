@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import Overview from "../Overview";
 import "./education.css";
+import Display from "../Display"
+import uniqid from "uniqid"
 
 /* 
 A section to add practical experience (company name, position title, main tasks of your jobs, date from and until when you worked for that company) */
@@ -11,6 +13,7 @@ class Education extends Component {
   
       this.state = {
         education: {
+          id: uniqid(),
           schoolName: '',
           major: '',
           years: '',
@@ -22,7 +25,7 @@ class Education extends Component {
 
     handleChange = (e) => {
       this.setState({
-          education:{...this.state.education, [e.target.name]: e.target.value, }
+          education:{...this.state.education,  id: uniqid(), [e.target.name]: e.target.value, }
       })
       return this.state.education;
     }
@@ -50,7 +53,7 @@ class Education extends Component {
       })
       console.log("edit")
     }
-    
+
     handleDisplay = () =>{
       this.setState({
         edit: false,
@@ -66,6 +69,7 @@ class Education extends Component {
       if(edit){
        return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
                       <Overview myInfo={infoArray} />
+                      <Display props={infoArray} />
        
                </div>
       }

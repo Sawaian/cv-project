@@ -14,7 +14,7 @@ render(){
 return (
     <div>
         { myInfo.map((myInfo) =>{
-            return <div className={"GeneralInfo"}>{myInfo}</div>
+            return <div className={myInfo}>{myInfo}</div>
         })}
   
             </div>

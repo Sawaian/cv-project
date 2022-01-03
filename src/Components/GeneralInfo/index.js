@@ -65,10 +65,8 @@ class GeneralInfo extends Component {
       if(edit){
         return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
                       <Overview myInfo={infoArray} />
-       
                </div>
-      }
-      else{
+      } else {
 
     return(
       <div>
