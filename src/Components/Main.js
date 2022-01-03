@@ -13,9 +13,9 @@ class Main extends Component {
 
   return (
     <>
-       <GeneralInfo />
+       {/* <GeneralInfo /> */}
        <Experience /> 
-       <Education /> 
+       {/* <Education />  */}
     </>
     
     )

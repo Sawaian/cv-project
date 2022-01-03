@@ -99,7 +99,6 @@ class GeneralInfo extends Component {
           />
           <button type="submit">Add info</button>
         </form>
-        <button className="editButton" display="none" onSubmit={this.edit} > Edit </button>
         <Overview myInfo={infoArray} />
     
       </div>

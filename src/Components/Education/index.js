@@ -50,11 +50,7 @@ class Education extends Component {
       })
       console.log("edit")
     }
-
-    go(){
-      console.log("Brent sneakers")
-    }
-
+    
     handleDisplay = () =>{
       this.setState({
         edit: false,

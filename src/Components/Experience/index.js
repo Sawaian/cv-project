@@ -16,6 +16,7 @@ class Experience extends Component {
           employedFrom: '',
         },
         infoArray: [],
+        edit: false,
       }
     }
 
@@ -25,7 +26,6 @@ class Experience extends Component {
       })
       return this.state.jobs;
     }
-  
    
   
     onSubmitInfo = (e) => {
@@ -39,19 +39,36 @@ class Experience extends Component {
           duties: '',
           }
         })
-        this.removeDisplay()
+        this.handleEdit()
       }
 
+      handleEdit = () => {
+        this.setState({
+          edit: true,
+        })
+        console.log("edit")
+      }
+      
 
-    removeDisplay = () =>{
-      document.querySelector(".experience-form").style.display = "none";
-      // this.createEditButton();
-    }
-
+      handleDisplay = () =>{
+        this.setState({
+          edit: false,
+        })
+        console.log("Display")
+      }
    
     render(){
 
-      const { jobs, infoArray } = this.state;
+      const { jobs, infoArray, edit} = this.state;
+
+      
+
+      if(edit){
+        return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
+                       <Overview myInfo={infoArray} />
+        
+                </div>
+       } else {
   
       return(
         <div>
@@ -82,10 +99,10 @@ class Experience extends Component {
             />
             <button type="submit">Add info</button>
           </form>
-          <Overview myInfo={infoArray} />
         </div>
       )
     };
+  }
     }
     
 
