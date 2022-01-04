@@ -27,24 +27,22 @@ class Education extends Component {
       this.setState({
           education:{...this.state.education,  id: uniqid(), [e.target.name]: e.target.value, }
       })
-      return this.state.education;
     }
   
    
   
     onSubmitInfo = (e) => {
       e.preventDefault()
-      console.log(this.state.education)
+      console.log("butts", this.state.education)
       this.setState({
         infoArray: Object.values(this.state.education),
-        education: {
-          schoolName: '',
-          major: '',
-          years: '',
-          }
+        // education: {
+        //   schoolName: '',
+        //   major: '',
+        //   years: '',
+        //   }
         })
         this.handleEdit();
-        console.log(this.state.edit)
       }
 
     handleEdit = () => {
@@ -59,22 +57,22 @@ class Education extends Component {
       this.setState({
         edit: false,
       })
-      console.log("Display")
+      console.log("reddt", this.state.education.schoolName)
     }
 
    
     render(){
 
-      const { schoolName, education, infoArray, edit } = this.state;
+      const { education, infoArray, edit } = this.state;
       
       if(edit){
        return  <div> <button className="editButton" onClick={this.handleDisplay}> Edit </button>
-                      {/* <Overview myInfo={infoArray} /> */}
+                      <Overview myInfo={infoArray} />
                       <label htmlFor="schoolName"> School Attended </label>
-                      <p>{this.state.schoolName}</p>
+                      <p>{education.schoolName}</p>
+                      <p>{education.major}</p>
                       
-               
-       
+
                </div>
       }
       else {
