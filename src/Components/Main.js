@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo/";
 // import Experience from "./Experience";
-// import Education from "./Education";
+import Education from "./Education";
 
 
 class Main extends Component {
@@ -15,7 +15,7 @@ class Main extends Component {
     <>
        <GeneralInfo />
        {/* <Experience />  */}
-       {/* <Education />  */}
+       <Education /> 
     </>
     
     )

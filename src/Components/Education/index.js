@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import uniqid from "uniqid";
+import './Education.css'
 
 class Education extends Component {
     constructor() {
@@ -71,7 +72,7 @@ class Education extends Component {
         else {
             return(
                 <div>
-                <form className="EDU" onSubmit={this.onSubmitInfo}>
+                <form className="edu" onSubmit={this.onSubmitInfo}>
                     <div>
                         <label className="school"> School </label>
                         <input
@@ -107,4 +108,4 @@ class Education extends Component {
     }
 }
 
-export default Education
+export default Education;
