@@ -39,9 +39,10 @@ class Experience extends Component {
                         <label className="companyName"> School </label>
                         <input
                         className="companyName"
-                        onChange={experience.companyName}
+                        onChange={this.handleChange}
                         placeholder = "Company Name"
-                        value = "text"
+                        value = {experience.companyName}
+                        type = "text"
                         name = "companyName"
                         required
                         />
