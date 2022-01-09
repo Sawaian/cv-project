@@ -23,7 +23,7 @@ class Education extends Component {
     onSubmitInfo = (e) => {
         e.preventDefault();
         this.setState({
-            infoArray: [...this.state.infoArray, this.state.infoArray ],
+            infoArray: [...this.state.infoArray, this.state.education ],
             education: {
                 schoolName: 'Drizzt Uni',
                 major: 'Fantasy',
@@ -76,9 +76,10 @@ class Education extends Component {
                         <label className="school"> School </label>
                         <input
                         className="schoolInput"
-                        onChange={education.schoolName}
+                        onChange={this.handleChange}
                         placeholder = "School"
-                        value = "text"
+                        value = {education.schoolName}
+                        type = "text"
                         name = "schoolName"
                         required
                         />
