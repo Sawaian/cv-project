@@ -7,16 +7,10 @@ class Education extends Component {
         super()
 
         this.state = {
-            education: {
-                schoolName: 'Drizzt Uni',
-                major: "Fantasy",
-                dateOfStudy: '2015',
-            },
+            education: { schoolName: 'Drizzt Uni', major: "Fantasy", dateOfStudy: '2015'},
             infoArray: [],
             edit: false,
         }
-
-
     }
 
     handleChange = (e) => {
@@ -39,31 +33,36 @@ class Education extends Component {
         this.handleEdit()
     }
 
+    handleDisplay =(e) =>{
+        this.setState({
+            edit: false,
+        })
+    }
+
     handleEdit(){
         this.setState({
             edit: true,
         })
     }
 
-    handleDisplay(){
-        this.setState({
-            edit: false,
-        })
-    }
+
 
     render() {
 
-        const { education, edit } = this.state;
+        const { education, infoArray, edit } = this.state;
         if (edit) {
             return (
                 <div>
-                    {education.map((info => (
-                    <div><p>{info.schoolName}</p>
-                    <p>{info.major}</p>
-                    <p>{info.dateOfStudy}</p>
+                    <button className="editButton" onClick={this.handleDisplay}> Edit </button>
+                    {
+                    infoArray.map((info) => (
+                    <div id={info.id}>
+                        <p>Name: {info.schoolName}</p>
+                        <p>{info.major}</p>
+                        <p>{info.dateOfStudy}</p>
                     </div>
                     )
-                    )
+                    
                     )
                     }
                 </div>
@@ -73,12 +72,12 @@ class Education extends Component {
             return(
                 <div>
                 <form className="edu" onSubmit={this.onSubmitInfo}>
-                    <div>
+             
                         <label className="school"> School </label>
                         <input
                         className="schoolInput"
                         onChange={education.schoolName}
-                        placeholder = "School Name"
+                        placeholder = "School"
                         value = "text"
                         name = "schoolName"
                         required
@@ -92,15 +91,16 @@ class Education extends Component {
                             name="major"
                             required
                         />
-                        <label htmlFor="dateTo"> Phone </label>
+                        <label htmlFor="dateTo"> Date To </label>
                         <input
                             className="dateTo"
                             onChange={this.handleChange}
-                            value={education.dateOfSTudy}
+                            value={education.dateOfStudy}
                             type="number"
                             name="phone"
                         />
-                    </div>
+                   
+                    <button type="submit">Add info</button>
                 </form>
                 </div>
             )
