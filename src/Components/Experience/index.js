@@ -30,13 +30,22 @@ class Experience extends Component {
                 infoArray: [...this.state.infoArray, this.state.experience]
             })
             this.handleEdit()
-            this.checkSubmission();
+            this.checkSubmission()
+            this.arrayCheck();
 
         }
 
+
         checkSubmission = (e) => {
-            if(this.state.experience === this.state.infoArray[0]){
-                    console.log("butts")
+           console.log("Work")
+        }
+
+        arrayCheck = (e) => {
+            for(let i = 0; i < this.state.infoArray; i++){
+                if(this.state.infoArray[i] === this.state.experience){
+                     console.log("butts two")
+                }
+                console.log("nepal")
             }
         }
 
