@@ -26,30 +26,30 @@ class Experience extends Component {
         }
 
         onSubmitInfo = (e) => {
+            e.preventDefault();
             if(this.state.infoArray.length !== 0){
                 this.checkForDuplicates();
               }
-            this.setState({
-                infoArray: [...this.state.infoArray, this.state.experience]
-            })
             this.handleEdit()
             this.checkSubmission()
-       
         }
 
 
         checkSubmission = (e) => {
-           console.log("Work")
+            this.setState({
+                infoArray: [...this.state.infoArray, this.state.experience]
+            })
         }
 
         checkForDuplicates = (e) => {
             //Iterate over array.
             console.log("check initiated")
+
             let info = this.state.infoArray
+            
             for(let i = 0; i < info.length; i++){
-                if(info[i].companyName === this.state.experience.companyName){
-                    console.log("Object found")
-                    console.log(info)
+                if(info[i] === this.state.experience){
+                 console.log("dupilicate submission detected");
                 }
             }
         }
