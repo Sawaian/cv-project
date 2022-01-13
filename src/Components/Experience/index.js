@@ -49,6 +49,7 @@ class Experience extends Component {
             for(let i = 0; i < info.length; i++){
                 if(info[i].companyName === this.state.experience.companyName){
                     console.log("Object found")
+                    console.log(info)
                 }
             }
         }
