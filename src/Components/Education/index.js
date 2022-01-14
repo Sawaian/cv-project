@@ -22,15 +22,11 @@ class Education extends Component {
 
     onSubmitInfo = (e) => {
         e.preventDefault();
-        this.setState({
-            infoArray: [...this.state.infoArray, this.state.education ],
-            education: {
-                schoolName: 'Drizzt Uni',
-                major: 'Fantasy',
-                dateOfStudy: '2015',
-            },   
-        })
+        if(this.state.infoArray.length !== 0){
+            this.checkForDuplicates();
+          }
         this.handleEdit()
+        this.checkSubmission()
     }
 
     handleDisplay =(e) =>{
@@ -43,6 +39,26 @@ class Education extends Component {
         this.setState({
             edit: true,
         })
+    }
+
+
+    checkSubmission = (e) => {
+        this.setState({
+            infoArray: [...this.state.infoArray, this.state.education]
+        })
+    }
+
+    checkForDuplicates = (e) => {
+        //Iterate over array.
+        console.log("check initiated")
+
+        let info = this.state.infoArray
+        
+        for(let i = 0; i < info.length; i++){
+            if(info[i] === this.state.education){
+             console.log("dupilicate submission detected");
+            }
+        }
     }
 
 

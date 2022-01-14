@@ -42,17 +42,25 @@ class Experience extends Component {
         }
 
         checkForDuplicates = (e) => {
-            //Iterate over array.
-            console.log("check initiated")
-
-            let info = this.state.infoArray
-            
-            for(let i = 0; i < info.length; i++){
-                if(info[i] === this.state.experience){
-                 console.log("dupilicate submission detected");
-                }
+            if(this.state.infoArray.indexOf(this.state.experience !== -1)){
+                alert('Value not found in Array')
+                return false;
             }
         }
+
+        // checkForDuplicates = (e) => {
+        //     //Iterate over array.
+        //     console.log("check initiated")
+        //     console.log(this.state.experience)
+
+        //     let info = this.state.infoArray
+            
+        //     for(let i = 0; i < info.length; i++){
+        //     if([i] === info.length){
+        //             console.log("push through")
+        //         }
+        //     }
+        // }
 
         handleEdit = (e) => {
             this.setState({
