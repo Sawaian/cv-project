@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo/";
-import Experience from "./Experience/"
+import Experience from "./Experience/s"
 import Education from "./Education";
 
 
