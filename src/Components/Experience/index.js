@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from "react";
 
 // companyName: 'CVS',
@@ -8,7 +7,7 @@ import React, { useState, useEffect } from "react";
 // dateFrom: '2012 Mar',
 // dateTo: '2020 Mar'
 
-const Experience = () => {
+function Experience(){
     const [companyName, setCompanyName] = useState("CVS");
     const [edit, setEdit] = useState("true");
     // const [position, setPosition] = useState("Stocker");
@@ -37,9 +36,8 @@ const Experience = () => {
     const handleEdit = () => {
        setEdit(true)
     }
-
-    if(edit === true){
-        return (
+if(edit === true){
+        return(
             <div>
                 <div>
                 <form className="exp" onSubmit={onSubmitInfo}>
@@ -57,7 +55,7 @@ const Experience = () => {
                 </div>
             </div>
         )
-    } else if (edit === false){
+    } 
         return(
             <div>
                  <p>Company Name: {companyName}</p>
@@ -66,9 +64,6 @@ const Experience = () => {
         )
     }
 
-
-
-}
 
 export default Experience;
 
