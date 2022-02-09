@@ -9,7 +9,7 @@ import React, { useState, useEffect } from "react";
 
 function Experience(){
     const [companyName, setCompanyName] = useState("CVS");
-    const [edit, setEdit] = useState("true");
+    const [edit, setEdit] = useState(true);
     // const [position, setPosition] = useState("Stocker");
     // const [mainTasks, setMainTasks] = useState("description");
 
@@ -19,10 +19,16 @@ function Experience(){
 
     const onSubmitInfo = (e) => {
         e.preventDefault();
+        // console.log("Before handleChange")
+        handleChange();
     }
 
    const handleChange = (e) => {
-       setCompanyName({[e.target.name]: e.target.value })
+
+    let name = {[e.target.name]: e.target.value };
+    
+       setCompanyName(name.value)
+
     }
 
    const findDuplicate = () => {
@@ -36,7 +42,8 @@ function Experience(){
     const handleEdit = () => {
        setEdit(true)
     }
-if(edit === true){
+if(edit){
+    console.log(edit + "forms")
         return(
             <div>
                 <div>
@@ -46,16 +53,18 @@ if(edit === true){
                                 className="companyName"
                                 onChange={handleChange}
                                 placeholder="Company Name"
-                                value = {companyName}
+                                value = {companyName ?? ""}
                                 type="text"
                                 name="companyName"
                                 required
                             />
+                            <button type="submit"> Submit </button>
                             </form>
                 </div>
             </div>
         )
     } 
+    console.log(edit + " no forms")
         return(
             <div>
                  <p>Company Name: {companyName}</p>
